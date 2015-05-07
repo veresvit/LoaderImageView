@@ -1,4 +1,4 @@
-package com.veresvit.loaderimageview;
+package com.veresvit.example;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
