@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!--
   ~ See the file "LICENSE" for the full license governing this code.
   -->
@@ -7,10 +8,7 @@
   -->
 
 <resources>
-
-	<!-- Base application theme. -->
-	<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-		<!-- Customize your theme here. -->
-	</style>
-
+	<declare-styleable name="LoaderImageView">
+		<attr name="uri" format="string"/>
+	</declare-styleable>
 </resources>

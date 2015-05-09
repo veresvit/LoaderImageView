@@ -1,3 +1,11 @@
+/*
+ * See the file "LICENSE" for the full license governing this code.
+ */
+
+/*
+ * See the file "LICENSE" for the full license governing this code.
+ */
+
 package com.veresvit.example;
 
 import android.app.Application;

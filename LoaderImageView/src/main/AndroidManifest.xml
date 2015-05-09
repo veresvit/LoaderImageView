@@ -1,5 +1,15 @@
-<manifest
-	package="com.veresvit.loaderimageview">
+<!--
+  ~ See the file "LICENSE" for the full license governing this code.
+  -->
 
+<!--
+  ~ See the file "LICENSE" for the full license governing this code.
+  -->
+
+<manifest
+	package="com.veresvit.loaderimageview"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<uses-permission android:name="android.permission.INTERNET"/>
 	<application/>
 </manifest>

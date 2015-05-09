@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ See the file "LICENSE" for the full license governing this code.
+  -->
+
+<!--
+  ~ See the file "LICENSE" for the full license governing this code.
+  -->
+
 <manifest
 	package="com.veresvit.example"
 	xmlns:android="http://schemas.android.com/apk/res/android">
