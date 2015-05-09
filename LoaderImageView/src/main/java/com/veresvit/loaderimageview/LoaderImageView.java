@@ -16,11 +16,13 @@ public class LoaderImageView extends ImageView {
 
 	public static final String TAG = LoaderImageView.class.getSimpleName();
 
+	// Inflater
 	private Context mContext;
 
 	// Attributes
 	private String mUri;
 	private int mPlaceholder;
+	private int mError;
 
 	public LoaderImageView(Context context) {
 		this(context, null);
@@ -46,9 +48,10 @@ public class LoaderImageView extends ImageView {
 	private void createRequest() {
 		RequestCreator requestCreator = Picasso.with(mContext).load(mUri);
 
-		if (Checker.isUsed(mPlaceholder)) {
+		if (Checker.isUsed(mPlaceholder))
 			requestCreator = requestCreator.placeholder(mPlaceholder);
-		}
+		if (Checker.isUsed(mError))
+			requestCreator = requestCreator.error(mError);
 
 		requestCreator.into(this);
 	}
@@ -64,6 +67,8 @@ public class LoaderImageView extends ImageView {
 				mUri = typedAttributes.getString(attrId);
 			} else if (attrId == R.styleable.LoaderImageView_placeholder) {
 				mPlaceholder = typedAttributes.getResourceId(attrId, -1);
+			} else if (attrId == R.styleable.LoaderImageView_error) {
+				mError = typedAttributes.getResourceId(attrId, -1);
 			}
 		}
 
