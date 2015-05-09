@@ -2,10 +2,6 @@
  * See the file "LICENSE" for the full license governing this code.
  */
 
-/*
- * See the file "LICENSE" for the full license governing this code.
- */
-
 apply plugin: 'com.android.library'
 
 android {

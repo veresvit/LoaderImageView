@@ -2,10 +2,6 @@
   ~ See the file "LICENSE" for the full license governing this code.
   -->
 
-<!--
-  ~ See the file "LICENSE" for the full license governing this code.
-  -->
-
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools"
