@@ -36,10 +36,10 @@ public class LoaderImageView extends ImageView {
 		super(context, attrs, defStyleAttr);
 		this.mContext = context;
 		parseAttributes(attrs);
-		refresh();
+		load();
 	}
 
-	public void refresh() {
+	public void load() {
 		if (Checker.isUsed(mUri)) {
 			createRequest();
 		}
@@ -73,5 +73,29 @@ public class LoaderImageView extends ImageView {
 		}
 
 		typedAttributes.recycle();
+	}
+
+	public String getUri() {
+		return mUri;
+	}
+
+	public void setUri(String mUri) {
+		this.mUri = mUri;
+	}
+
+	public int getPlaceholder() {
+		return mPlaceholder;
+	}
+
+	public void setPlaceholder(int mPlaceholder) {
+		this.mPlaceholder = mPlaceholder;
+	}
+
+	public int getError() {
+		return mError;
+	}
+
+	public void setError(int mError) {
+		this.mError = mError;
 	}
 }
