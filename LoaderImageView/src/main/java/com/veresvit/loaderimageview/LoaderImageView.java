@@ -10,11 +10,16 @@ import android.util.AttributeSet;
 import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.RequestCreator;
 
 public class LoaderImageView extends ImageView {
+
 	public static final String TAG = LoaderImageView.class.getSimpleName();
 
 	private Context mContext;
+
+	// Attributes
+	private String mUri;
 
 	public LoaderImageView(Context context) {
 		this(context, null);
@@ -28,6 +33,19 @@ public class LoaderImageView extends ImageView {
 		super(context, attrs, defStyleAttr);
 		this.mContext = context;
 		parseAttributes(attrs);
+		refresh();
+	}
+
+	public void refresh() {
+		if (Checker.isUsed(mUri)) {
+			createRequest();
+		}
+	}
+
+	private void createRequest() {
+		RequestCreator requestCreator = Picasso.with(mContext).load(mUri);
+
+		requestCreator.into(this);
 	}
 
 	private void parseAttributes(AttributeSet attrs) {
@@ -37,15 +55,10 @@ public class LoaderImageView extends ImageView {
 		for (int i = 0; i < attributeCount; i++) {
 			int attrId = typedAttributes.getIndex(i);
 			if (attrId == R.styleable.LoaderImageView_uri) {
-				String uri = typedAttributes.getString(attrId);
-				loadFromUri(uri);
+				mUri = typedAttributes.getString(attrId);
 			}
 		}
 
 		typedAttributes.recycle();
-	}
-
-	private void loadFromUri(String uri) {
-		Picasso.with(mContext).load(uri).into(this);
 	}
 }

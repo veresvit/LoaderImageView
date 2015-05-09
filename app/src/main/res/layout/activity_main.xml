@@ -15,17 +15,30 @@
 		android:orientation="vertical">
 
 		<com.veresvit.loaderimageview.LoaderImageView
-			android:id="@+id/srcExample"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:src="@drawable/demo_pic"/>
+			android:padding="@dimen/activity_vertical_margin"
+			app:uri="http://placekitten.com/g/800/610"/>
 
 		<com.veresvit.loaderimageview.LoaderImageView
-			android:id="@+id/uriExample"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			app:uri="http://placekitten.com/g/800/600"/>
+			android:padding="@dimen/activity_vertical_margin"
+			app:uri="http://placekitten.com/g/800/620"/>
+
+		<com.veresvit.loaderimageview.LoaderImageView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="@dimen/activity_vertical_margin"
+			app:uri="http://placekitten.com/g/800/630"/>
+
+		<com.veresvit.loaderimageview.LoaderImageView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="@dimen/activity_vertical_margin"
+			app:uri="http://placekitten.com/g/800/640"/>
 
 	</LinearLayout>
+
 </ScrollView>
 
