@@ -6,5 +6,6 @@
 <resources>
 	<declare-styleable name="LoaderImageView">
 		<attr name="uri" format="string"/>
+		<attr name="placeholder" format="reference"/>
 	</declare-styleable>
 </resources>
