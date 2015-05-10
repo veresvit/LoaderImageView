@@ -22,7 +22,16 @@ android {
 	}
 }
 
+repositories {
+	maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+}
+
 dependencies {
 	compile fileTree(dir: 'libs', include: ['*.jar'])
 	compile 'com.squareup.picasso:picasso:2.5.2'
+	testCompile 'junit:junit:4.12'
+	testCompile('org.robolectric:robolectric:3.0-SNAPSHOT') {
+		exclude group: 'commons-logging', module: 'commons-logging'
+		exclude group: 'org.apache.httpcomponents', module: 'httpclient'
+	}
 }
