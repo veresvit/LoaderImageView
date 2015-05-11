@@ -9,18 +9,22 @@ import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.RequestCreator;
 
 /**
  * ImageView extension with support for async loading of images from an URI, with ability to set a placeholder or an error image.
  */
-public class LoaderImageView extends ImageView {
+public class LoaderImageView extends ImageView implements Callback {
 
 	public static final String TAG = LoaderImageView.class.getSimpleName();
 
 	// Inflater
 	private Context mContext;
+
+	// Callback
+	private OnFinishListener callback;
 
 	// Attributes
 	private String mUri;
@@ -87,7 +91,11 @@ public class LoaderImageView extends ImageView {
 		if (Checker.isUsed(mError))
 			requestCreator = requestCreator.error(mError);
 
-		requestCreator.into(this);
+		if (callback != null) {
+			requestCreator.into(this, this);
+		} else {
+			requestCreator.into(this);
+		}
 	}
 
 	/**
@@ -112,6 +120,22 @@ public class LoaderImageView extends ImageView {
 		}
 
 		typedAttributes.recycle();
+	}
+
+	/**
+	 * On successful loading image callback.
+	 */
+	@Override
+	public void onSuccess() {
+
+	}
+
+	/**
+	 * On failed loading image callback.
+	 */
+	@Override
+	public void onError() {
+
 	}
 
 	/**
@@ -166,5 +190,9 @@ public class LoaderImageView extends ImageView {
 	 */
 	public void setError(int errorResource) {
 		this.mError = errorResource;
+	}
+
+	public void setOnFinishListener(OnFinishListener onFinishListener) {
+		this.callback = onFinishListener;
 	}
 }

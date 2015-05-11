@@ -21,12 +21,14 @@ public class LoaderImageViewTest {
 
 	private Context context;
 	private String testUri;
+	private String testUriFail;
 	private int resuourceId;
 
 	@Before
 	public void prepare() throws Exception {
 		context = RuntimeEnvironment.application.getApplicationContext();
 		testUri = "http://placekitten.com/g/500/500";
+		testUriFail = "http://placekitten.m/g/500/500";
 		resuourceId = 12345679;
 	}
 
@@ -76,9 +78,8 @@ public class LoaderImageViewTest {
 		loaderImageView.setUri(testUri);
 
 		String uri = loaderImageView.getUri();
-		String differentUri = "http://somedifferenturi.com";
 
-		boolean isSame = uri.equals(differentUri);
+		boolean isSame = uri.equals(testUriFail);
 		Assert.assertEquals(false, isSame);
 	}
 
