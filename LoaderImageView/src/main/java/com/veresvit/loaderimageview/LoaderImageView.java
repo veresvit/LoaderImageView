@@ -127,7 +127,7 @@ public class LoaderImageView extends ImageView implements Callback {
 	 */
 	@Override
 	public void onSuccess() {
-
+		callback.onSuccess();
 	}
 
 	/**
@@ -135,7 +135,7 @@ public class LoaderImageView extends ImageView implements Callback {
 	 */
 	@Override
 	public void onError() {
-
+		callback.onError();
 	}
 
 	/**
