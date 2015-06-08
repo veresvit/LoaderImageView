@@ -22,14 +22,14 @@ public class LoaderImageViewTest {
 	private Context context;
 	private String testUri;
 	private String testUriFail;
-	private int resuourceId;
+	private int resourceId;
 
 	@Before
 	public void prepare() throws Exception {
 		context = RuntimeEnvironment.application.getApplicationContext();
 		testUri = "http://placekitten.com/g/500/500";
 		testUriFail = "http://placekitten.m/g/500/500";
-		resuourceId = 12345679;
+		resourceId = 12345679;
 	}
 
 	@Test
@@ -96,7 +96,7 @@ public class LoaderImageViewTest {
 	@Test
 	public void testGetPlaceholderIsSet() throws Exception {
 		LoaderImageView loaderImageView = new LoaderImageView(context);
-		loaderImageView.setPlaceholder(resuourceId);
+		loaderImageView.setPlaceholder(resourceId);
 
 		int placeholder = loaderImageView.getPlaceholder();
 
@@ -107,18 +107,18 @@ public class LoaderImageViewTest {
 	@Test
 	public void testSetPlaceholderIsSame() throws Exception {
 		LoaderImageView loaderImageView = new LoaderImageView(context);
-		loaderImageView.setPlaceholder(resuourceId);
+		loaderImageView.setPlaceholder(resourceId);
 
 		int placeholder = loaderImageView.getPlaceholder();
 
-		boolean isSame = placeholder == resuourceId;
+		boolean isSame = placeholder == resourceId;
 		Assert.assertEquals(true, isSame);
 	}
 
 	@Test
 	public void testSetPlaceholderIsDifferent() throws Exception {
 		LoaderImageView loaderImageView = new LoaderImageView(context);
-		loaderImageView.setPlaceholder(resuourceId);
+		loaderImageView.setPlaceholder(resourceId);
 
 		int placeholder = loaderImageView.getPlaceholder();
 
@@ -139,7 +139,7 @@ public class LoaderImageViewTest {
 	@Test
 	public void testGetErrorIsSet() throws Exception {
 		LoaderImageView loaderImageView = new LoaderImageView(context);
-		loaderImageView.setError(resuourceId);
+		loaderImageView.setError(resourceId);
 
 		int error = loaderImageView.getError();
 
@@ -150,18 +150,18 @@ public class LoaderImageViewTest {
 	@Test
 	public void testSetErrorIsSame() throws Exception {
 		LoaderImageView loaderImageView = new LoaderImageView(context);
-		loaderImageView.setPlaceholder(resuourceId);
+		loaderImageView.setPlaceholder(resourceId);
 
 		int error = loaderImageView.getPlaceholder();
 
-		boolean isSame = error == resuourceId;
+		boolean isSame = error == resourceId;
 		Assert.assertEquals(true, isSame);
 	}
 
 	@Test
 	public void testSetErrorIsDifferent() throws Exception {
 		LoaderImageView loaderImageView = new LoaderImageView(context);
-		loaderImageView.setPlaceholder(resuourceId);
+		loaderImageView.setPlaceholder(resourceId);
 
 		int error = loaderImageView.getPlaceholder();
 

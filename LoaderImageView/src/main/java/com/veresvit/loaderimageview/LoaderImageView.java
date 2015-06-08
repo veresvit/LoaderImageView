@@ -21,7 +21,7 @@ public class LoaderImageView extends ImageView implements Callback {
 	public static final String TAG = LoaderImageView.class.getSimpleName();
 
 	// Inflater
-	private Context mContext;
+	private final Context mContext;
 
 	// Callback
 	private OnFinishListener callback;
