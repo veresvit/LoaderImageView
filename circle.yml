@@ -4,7 +4,8 @@
 
 general:
     artifacts:
-        - /home/ubuntu/LoaderImageView/app/build/outputs/apk/
+        - /home/ubuntu/LoaderImageView/LoaderImageView/build/outputs/aar
+        - /home/ubuntu/LoaderImageView/app/build/outputs/apk
 
 machine:
     environment:
@@ -16,8 +17,10 @@ dependencies:
     override:
         - chmod +x gradlew
         - ./gradlew dependencies
+    cache_directories:
+        - ~/.android-sdk-linux
+        - ~/android-sdk-linux
 
 test:
   override:
     - ./gradlew assembleRelease
-    - cp -r project-name/build/outputs $CIRCLE_ARTIFACTS
