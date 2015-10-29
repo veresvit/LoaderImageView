@@ -1,5 +1,10 @@
 # LoaderImageView
-Loading images from many different sources with ease.
+Image view with ability to load and cache images from internet. Specify the URL either in XML or in Java code.
+
+Combine the settings from XML and Java code to setup once run always.
+
+# Credits
+This library is a wrapper around an amazing library [picasso](https://github.com/square/picasso).
 
 
 License
