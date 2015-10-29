@@ -3,6 +3,9 @@ Image view with ability to load and cache images from internet. Specify the URL 
 
 Combine the settings from XML and Java code to setup once run always.
 
+## Status
+![Circle CI status](https://circleci.com/gh/veresvit/LoaderImageView.png?&style=shield&circle-token=0ce97890a14c10e31a1011cbd4e13f2e1764687e "Circle CI status")
+
 # Credits
 This library is a wrapper around an amazing library [picasso](https://github.com/square/picasso).
 
